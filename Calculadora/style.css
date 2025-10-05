@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primaria: #d246e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculadora-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+}
+
+.visor-caixa {
+    margin-bottom: 1.5rem;
+}
+
+.visor {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--claro);
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.botoes-caixa {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+button {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.botao-numero, .botao-cinza {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+}
+
+.botao-numero:hover, .botao-cinza:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.botao-operacao {
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    color: var(--claro);
+    font-weight: bold;
+}
+
+.botao-operacao:hover {
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.botao-igual {
+    grid-row: span 2;
+    height: 100%;
+}
+
+.botao-zero {
+    grid-column: span 2;
+}
